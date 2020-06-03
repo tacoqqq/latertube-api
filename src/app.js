@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const { CLIENT_ORIGIN } = require('./config')
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config')
 const genreRouter = require('../src/routes/genre-route');

@@ -12,7 +12,6 @@ genreRouter
         
         databaseService.getAllGenres(knexInstance)
             .then( allGenres => {
-                console.log(sanitizedContent(allGenres))
                 res.json(sanitizedContent(allGenres))
             })
             .catch(next)

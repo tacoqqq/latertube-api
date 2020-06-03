@@ -3,7 +3,6 @@ const path = require('path');
 const videoRouter = express.Router();
 const databaseService = require('../database-service');
 const sanitizedContent = require('../sanitized-content');
-const { STORE } = require('../../store');
 const bodyParser = express.json();
 
 videoRouter
@@ -25,13 +24,18 @@ videoRouter
                 return res.status(400).json({error: `Missing ${key} in the request body!`})
             }
 
-        //formatting video_thumbnail_url for mobile shared youtube link
+        //formatting video_thumbnail_url shared from mobile
         let youtubeId;
         if (newVideo.video_url.split('/')[2].startsWith('youtu.be')){
             youtubeId = newVideo.video_url.split('/')[3]
         } else (
             youtubeId = newVideo.video_url.split('v=')[1]
         )
+
+        //if the URL contains time code, remove it. only need the youtube ID
+        if (youtubeId.includes('&t=')){
+            youtubeId.split('&t=').pop()
+        }
 
         newVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
         newVideo.video_description = video_description
@@ -98,6 +102,11 @@ videoRouter
         } else (
             youtubeId = updatedVideo.video_url.split('v=')[1]
         )
+
+        //if the URL contains time code, remove it. only need the youtube ID
+        if (youtubeId.includes('&t=')){
+            youtubeId.split('&t=').pop()
+        }
 
         updatedVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
         updatedVideo.video_description = video_description
