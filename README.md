@@ -1,26 +1,27 @@
-# Express Boilerplate!
+# LaterTube: A Youtube Bookmarker
 
-This is a boilerplate project used for starting new projects!
+Link to Live Demo: https://latertube-app.now.sh/
 
-## Set up
+## What is LaterTube?
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+LaterTube stores Youtube videos you want to watch later. Come back anytime to the videos without distractions.
+<b>Features</b>
+<ul>
+    <li>Categorization: Users can create their own video genre(video type) and store the videos under matching genres.</li>
+    ![Getting Started](./markdown-images/create-genre.jpg)
+    <li>Personalization: Users can rate the videos, re-name the videos and give brief introductions. This is a personalized watch-later playlist, free from any annoying and unwanted purchased ads and banners.</li>
+    <li>Watch in one-click: Click on the "watch now" button and go directly to the Youtube. </li>
+</ul>
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Technology Used
+<ul>
+    <li>React</li>
+    <li>Node</li>
+    <li>Express</li>
+    <li>CSS</li>
+    <li>PostgreSQL</li>
+</ul>
 
-## Scripts
 
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+Documentation of your API.
+Screenshot(s) of your app. This makes your app description much easier to understand.
