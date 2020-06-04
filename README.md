@@ -11,7 +11,7 @@ LaterTube stores Youtube videos you want to watch later. Come back anytime to th
 
 ![Home Demo](./markdown-images/home-demo.png)
 
-##Features##
+## Features
 
 - *Categorization:* Users can create their own video genres (video types) and store the videos under matching genres.
 
