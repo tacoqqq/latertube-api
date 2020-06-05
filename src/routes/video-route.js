@@ -108,7 +108,8 @@ videoRouter
             youtubeId.split('&t=').pop()
         }
 
-        updatedVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+
+        updatedVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
         updatedVideo.video_description = video_description
         updatedVideo.video_created_time = video_created_time
 
