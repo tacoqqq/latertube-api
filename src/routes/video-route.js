@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const videoRouter = express.Router();
+const urlExist = require('url-exist');
 const databaseService = require('../database-service');
 const sanitizedContent = require('../sanitized-content');
 const bodyParser = express.json();
@@ -37,7 +38,7 @@ videoRouter
             youtubeId.split('&t=').pop()
         }
 
-        newVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+        newVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
         newVideo.video_description = video_description
 
         databaseService.insertNewVideo(
@@ -108,9 +109,7 @@ videoRouter
             youtubeId.split('&t=').pop()
         }
 
-
         updatedVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
-        console.log(updatedVideo.video_thumbnail_url)
         updatedVideo.video_description = video_description
         updatedVideo.video_created_time = video_created_time
 
