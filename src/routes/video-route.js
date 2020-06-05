@@ -110,6 +110,7 @@ videoRouter
 
 
         updatedVideo.video_thumbnail_url = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
+        console.log(updatedVideo.video_thumbnail_url)
         updatedVideo.video_description = video_description
         updatedVideo.video_created_time = video_created_time
 
